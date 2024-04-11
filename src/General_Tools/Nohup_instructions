@@ -1,0 +1,9 @@
+""" Running Python code """
+nohup python -u file > output.out &
+
+""" Finding Processes """
+ps -ax | grep file
+
+""" Getting Latest in output.out """
+tail -f output.out
+
