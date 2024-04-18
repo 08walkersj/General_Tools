@@ -17,7 +17,7 @@ def circular_variance(file_path, save_path, window=30, load_key='omni', key='omn
     Parameters:
     - file_path (str): Path to the input HDF file containing the data.
     - save_path (str): Path to the output HDF file to save the results.
-    - window (int, optional): Size of the rolling window for calculating variance and mean. Default is 30.
+    - window (int, optional): Size of the rolling window for calculating variance and mean. Default is 30 minutes.
     - load_key (str, optional): Key to load the data from the input HDF file. Default is 'omni'.
     - key (str, optional): Key to save the data in the output HDF file. Default is 'omni_window'.
 
@@ -93,7 +93,7 @@ def dipole(file_path, save_path, window=30, load_key='omni', key='omni_window'):
     Parameters:
     - file_path (str): Path to the input HDF file containing the data.
     - save_path (str): Path to the output HDF file to save the results.
-    - window (int, optional): Size of the rolling window. Default is 30.
+    - window (int, optional): Size of the rolling window. Default is 30 minutes.
     - load_key (str, optional): Key to load the data from the input HDF file. Default is 'omni'.
     - key (str, optional): Key to save the data in the output HDF file. Default is 'omni_window'.
 
@@ -119,8 +119,8 @@ def time_shift(file_path, save_path, start=20, end=10, load_key='omni', key='omn
     Parameters:
     - file_path (str): Path to the input HDF file containing the data.
     - save_path (str): Path to the output HDF file to save the results.
-    - start (int, optional): Number of steps to start the shift. Default is 20.
-    - end (int, optional): Number of steps to end the shift. Default is 10.
+    - start (int, optional): Number of steps to start the shift. Default is 20 minutes prior.
+    - end (int, optional): Number of steps to end the shift. Default is 10 minutes prior.
     - load_key (str, optional): Key to load the data from the input HDF file. Default is 'omni'.
     - key (str, optional): Key to save the data in the output HDF file. Default is 'omni_window'.
 
