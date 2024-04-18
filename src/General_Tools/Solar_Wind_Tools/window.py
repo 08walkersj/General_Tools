@@ -65,7 +65,7 @@ def coupling(file_path, save_path, window=30, load_key='omni', key='omni_window'
     Parameters:
     - file_path (str): Path to the input HDF file containing the data.
     - save_path (str): Path to the output HDF file to save the results.
-    - window (int, optional): Size of the rolling window. Default is 30.
+    - window (int, optional): Size of the rolling window. Default is 30 minutes.
     - load_key (str, optional): Key to load the data from the input HDF file. Default is 'omni'.
     - key (str, optional): Key to save the data in the output HDF file. Default is 'omni_window'.
 
@@ -80,8 +80,8 @@ def coupling(file_path, save_path, window=30, load_key='omni', key='omni_window'
     
     from .Coupling_Functions import newell_coupling_function
 
-    data['Newell_Episilon'] = newell_coupling_function(data.Vx, data.BY_GSM, data.BZ_GSM)
-    data['Newell_Episilon_Mean'] = data.Newell_Episilon.rolling(window=window, min_periods=0).apply(np.nanmean, engine='numba', raw=True)
+    data['Newell_Epsilon'] = newell_coupling_function(data.Vx, data.BY_GSM, data.BZ_GSM)
+    data['Newell_Epsilon_Mean'] = data.Newell_Episilon.rolling(window=window, min_periods=0).apply(np.nanmean, engine='numba', raw=True)
     
     data.to_hdf(save_path, key=key)
 
